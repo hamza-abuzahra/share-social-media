@@ -10,29 +10,34 @@ export const useCounterStore = defineStore({
   },
   actions: {
     share() {
-      console.log('activated')
-      const urlToObject = async()=> {
-        const response = await fetch(`src\\assets\\WhatsApp Image 2022-07-27 at 2.52.30 PM.jpeg`);
-        // here image is url/location of image
-        const blob = await response.blob();
-        const file = [new File([blob], 'image.jpg', {type: blob.type})];
-        // console.log(file)
-        return file
-      }
-      let file = urlToObject().then((file) => {
-        console.log(file)
-        const shareData = {
-          text: "test", 
-          title: "please work", 
-          file
+      ;(async () => {
+        if (!('share' in navigator)) {
+          return
         }
-        navigator.share(shareData)
-        console.log("are you here")
-      })
-
-      // console.log(file)
-      
-
-    }
+        // `element` is the HTML element you want to share.
+        // `backgroundColor` is the desired background color.
+        fetch("src\\assets\\WhatsApp Image 2022-07-27 at 2.52.30 PM.jpeg").then(res => res.blob()).then(async (blob) => {
+            // Even if you want to share just one file you need to
+            // send them as an array of files.
+            const files = [new File([blob], 'image.png', { type: blob.type })]
+            const shareData = {
+              text: 'Some text',
+              title: 'Some title',
+              files,
+            }
+            if (navigator.canShare(shareData)) {
+              try {
+                await navigator.share(shareData)
+              } catch (err) {
+                if (err.name !== 'AbortError') {
+                  console.error(err.name, err.message)
+                }
+              }
+            } else {
+              console.warn('Sharing not supported', shareData)
+            }
+          })
+    })()
+  },
   }
 })
