@@ -2,18 +2,36 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import { useCounterStore } from './stores/counter';
+import html2canvas from 'html2canvas'
+
 
 const store = useCounterStore()
+const share = async function() {
+  const canvas = await html2canvas(document.getElementById('shared'))
+  canvas.toBlob(async (blob) => {
+    const files = [new File([blob], 'image.jpeg', {type: blob.type})]
+    const shareData = {
 
+      files
+    }
+    try{
+      await navigator.share(shareData)
+      console.log('shared')
+    }
+    catch (e) {
+      console.log(e.name, e.message)
+    }
+  })
+}
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img alt="Vue logo" id="shared" class="logo" src="./assets/WhatsApp Image 2022-07-27 at 2.52.30 PM.jpeg" width="125" height="125" />
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-      <h1 @click="store.share">hellooo</h1>
+      <h1 @click="share">hellooo</h1>
       <input type="file" id="test">
       <nav>
         <RouterLink to="/">Home</RouterLink>
