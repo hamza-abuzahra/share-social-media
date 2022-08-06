@@ -19,7 +19,7 @@ export const useCounterStore = defineStore({
         fetch("src\\assets\\WhatsApp Image 2022-07-27 at 2.52.30 PM.jpeg").then(res => res.blob()).then(async (blob) => {
             // Even if you want to share just one file you need to
             // send them as an array of files.
-            const files = [new File([blob], 'image.png', { type: blob.type })]
+            const files = [new File([blob], 'image.jpeg', { type: blob.type })]
             const shareData = {
               text: 'Some text',
               title: 'Some title',
