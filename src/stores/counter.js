@@ -20,9 +20,6 @@ export const useCounterStore = defineStore({
         const file = new File([blob], 'rick.jpg', {type: blob.type});
   
         await navigator.share({
-          url: shareurl,
-          title: sharetitle,
-          text: sharetext,
           files: [file]
         });
       } catch (err) {
