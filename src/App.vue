@@ -7,10 +7,20 @@ import html2canvas from 'html2canvas'
 
 const store = useCounterStore()
 const share = async function() {
-  const canvas = await html2canvas(document.getElementById('shared'), {
-    scale: 2
-  })
-  canvas.toBlob(async (blob) => {
+    const canvas = await html2canvas(document.getElementById('shared'), {
+    useCORS: true,
+    allowTaint: true,
+    letterRendering: true,
+    onrendered: function(canvas) {
+    var ctx = canvas.getContext('2d');
+    ctx.webkitImageSmoothingEnabled = true;
+    ctx.mozImageSmoothingEnabled = true;
+    ctx.imageSmoothingEnabled = true;
+    },
+    })
+  
+
+    canvas.toBlob(async (blob) => {
     const files = [new File([blob], 'image.jpeg', {type: blob.type})]
     const shareData = {
       files
