@@ -15,7 +15,7 @@ export const useCounterStore = defineStore({
         const response = await fetch("src\\assets\\logo.svg");
         // here image is url/location of image
         const blob = await response.blob();
-        const file = new File([blob], 'image.jpg', {type: blob.type});
+        const file = [new File([blob], 'image.jpg', {type: blob.type})];
         return file
       }
       let file = urlToObject()
