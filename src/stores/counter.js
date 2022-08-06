@@ -19,28 +19,16 @@ export const useCounterStore = defineStore({
         console.log('No files selected.')
         return
       }
-    
-      // feature detecting navigator.canShare() also implies
-      // the same for the navigator.share()
-      // if (!navigator.canShare) {
-      //   output.textContent = `Your browser doesn't support the Web Share API.`
-      //   return
-      // }
-    
-      // if (navigator.canShare({ files })) {
-        try {
-          await navigator.share({
-            files,
-            title: 'Images',
-            text: 'Beautiful images'
-          })
-          console.log('Shared!')
-        } catch (error) {
-          console.log(`Error: ${error.message}`)
-        }
-      // } else {
-      //   output.textContent = `Your system doesn't support sharing these files.`
-      // }
+      try {
+        await navigator.share({
+          files,
+          // title: 'Images',
+          // text: 'Beautiful images'
+        })
+        console.log('Shared!')
+      } catch (error) {
+        console.log(`Error: ${error.message}`)
+      }
     },
   } 
 })
