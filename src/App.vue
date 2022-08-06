@@ -26,7 +26,7 @@ const share = async function() {
 
 <template>
   <header>
-    <img alt="Vue logo" id="shared" class="logo" src="@\assets\WhatsApp Image 2022-07-27 at 2.52.30 PM.jpeg" width="125" height="125" />
+    <img alt="Vue logo" id="shared" class="logo" src="@\assets\test.jpeg" width="125" height="125" />
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
