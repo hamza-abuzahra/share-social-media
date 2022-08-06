@@ -24,7 +24,7 @@ export const useCounterStore = defineStore({
             text: 'some_text',
             files: filesArray,
             title: 'some_title',
-            url: 'some_url'
+            // url: 'some_url'
           });
         } catch (err){
           console.log(err)
