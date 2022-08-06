@@ -7,7 +7,9 @@ import html2canvas from 'html2canvas'
 
 const store = useCounterStore()
 const share = async function() {
-  const canvas = await html2canvas(document.getElementById('shared'))
+  const canvas = await html2canvas(document.getElementById('shared'), {
+    scale: 2
+  })
   canvas.toBlob(async (blob) => {
     const files = [new File([blob], 'image.jpeg', {type: blob.type})]
     const shareData = {
