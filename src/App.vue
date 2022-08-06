@@ -14,6 +14,7 @@ const store = useCounterStore()
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
       <h1 @click="store.share">hellooo</h1>
+      <input type="file" id="test">
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
