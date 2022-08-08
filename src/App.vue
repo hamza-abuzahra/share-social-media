@@ -27,11 +27,11 @@ const share = async function() {
       files
     }
     try{
-
+      const time = window.performance.now()
+      store.duration = time - a
       await navigator.share(shareData)
       console.log('shared')
-      const time = window.performance.now()
-    store.duration = time - a
+      
     }
     catch (e) {
       console.log(e.name, e.message)
@@ -59,11 +59,11 @@ const share1 = async function() {
       files
     }
     try{
-
+      const time = window.performance.now()
+      store.duration1 = time - a
       await navigator.share(shareData)
       console.log('shared')
-      const time = window.performance.now()
-    store.duration1 = time - a
+      
     }
     catch (e) {
       console.log(e.name, e.message)
@@ -91,11 +91,11 @@ const share2 = async function() {
       files
     }
     try{
-
+      const time = window.performance.now()
+      store.duration2 = time - a
       await navigator.share(shareData)
       console.log('shared')
-      const time = window.performance.now()
-    store.duration2 = time - a
+      
     }
     catch (e) {
       console.log(e.name, e.message)
@@ -122,9 +122,9 @@ const share3 = async function() {
     }
     try{
       const time = window.performance.now()
+      store.duration3 = time - a
       await navigator.share(shareData)
       console.log('shared')
-    store.duration3 = time - a
     }
     catch (e) {
       console.log(e.name, e.message)
