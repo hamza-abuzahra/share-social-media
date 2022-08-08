@@ -1,12 +1,13 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 import { useCounterStore } from './stores/counter';
 import html2canvas from 'html2canvas'
+import { compileScript } from '@vue/compiler-sfc';
 
 
 const store = useCounterStore()
 const share = async function() {
+    let a =  window.performance.now()
     const canvas = await html2canvas(document.getElementById('shared'), {
     // useCORS: true,
     // allowTaint: true,
@@ -29,24 +30,29 @@ const share = async function() {
       files
     }
     try{
+
       await navigator.share(shareData)
       console.log('shared')
     }
     catch (e) {
       console.log(e.name, e.message)
     }
+    
   })
+  const time = window.performance.now()
+  store.duration = time - a
+
 }
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" id="shared" class="logo" src="@\assets\test.jpeg"/>
+    <img alt="Vue logo" id="shared" class="logo" src="@\assets\test4.jpg"/>
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-      <h1 @click="share">hellooo</h1>
-      <!-- <input type="image" id="test" src="src\assets\test3.jpeg"> -->
+      <button @click="share">Share</button>
+      <label for="">{{ store.duration }} ms</label>
+      <!-- <input type="image" id="test"  src="src\assets\test3.jpeg"> -->
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
