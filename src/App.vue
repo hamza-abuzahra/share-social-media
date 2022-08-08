@@ -135,7 +135,7 @@ const share3 = async function() {
 
 <template>
   <header>
-    <img alt="Vue logo" id="shared" src="@\assets\test3.jpeg" width="600" height="800">
+    <img alt="Vue logo" id="shared" src="@\assets\test3.jpeg" width="1080" height="1080">
 
     <div class="wrapper">
       <button @click="share">Share</button>
