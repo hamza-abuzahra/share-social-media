@@ -47,7 +47,7 @@ const share = async function() {
 
 <template>
   <header>
-    <img alt="Vue logo" id="shared" class="logo" src="@\assets\test4.jpg"/>
+    <img alt="Vue logo" id="shared" class="logo" src="@\assets\test6.jpg"/>
 
     <div class="wrapper">
       <button @click="share">Share</button>
