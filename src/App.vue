@@ -40,7 +40,7 @@ const share = async function() {
 }
 const share1 = async function() {
     let a =  window.performance.now()
-    const canvas = await html2canvas(document.getElementById('shared'), {
+    const canvas = await html2canvas(document.getElementById('shared1'), {
     useCORS: true,
     allowTaint: true,
     letterRendering: true,
@@ -72,7 +72,7 @@ const share1 = async function() {
 }
 const share2 = async function() {
     let a =  window.performance.now()
-    const canvas = await html2canvas(document.getElementById('shared'), {
+    const canvas = await html2canvas(document.getElementById('shared2'), {
     useCORS: true,
     allowTaint: true,
     letterRendering: true,
@@ -104,7 +104,7 @@ const share2 = async function() {
 }
 const share3 = async function() {
     let a =  window.performance.now()
-    const canvas = await html2canvas(document.getElementById('shared'), {
+    const canvas = await html2canvas(document.getElementById('shared3'), {
     useCORS: true,
     allowTaint: true,
     letterRendering: true,
@@ -115,8 +115,6 @@ const share3 = async function() {
     ctx.imageSmoothingEnabled = true;
     },
     })
-    const test = document.getElementById("test3")
-    console.log(test)
     canvas.toBlob(async (blob) => {
     const files = [new File([blob], 'image.jpeg', {type: blob.type})]
     const shareData = {
