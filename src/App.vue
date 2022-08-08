@@ -140,11 +140,6 @@ const share3 = async function() {
     <div class="wrapper">
       <button @click="share">Share</button>
       <label for="">{{ store.duration }} ms</label>
-      <!-- <input type="image" id="test"  src="src\assets\test3.jpeg"> -->
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
 
     </div>
     <img alt="Vue logo" id="shared1" class="logo" src="@\assets\test4.jpg"/>
@@ -152,11 +147,7 @@ const share3 = async function() {
     <div class="wrapper">
       <button @click="share1">Share</button>
       <label for="">{{ store.duration1 }} ms</label>
-      <!-- <input type="image" id="test"  src="src\assets\test3.jpeg"> -->
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+
 
     </div>
     <img alt="Vue logo" id="shared2" class="logo" src="@\assets\test5.jpg"/>
@@ -164,11 +155,7 @@ const share3 = async function() {
     <div class="wrapper">
       <button @click="share2">Share</button>
       <label for="">{{ store.duration2 }} ms</label>
-      <!-- <input type="image" id="test"  src="src\assets\test3.jpeg"> -->
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+
 
     </div>
     <img alt="Vue logo" id="shared3" class="logo" src="@\assets\test6.jpg"/>
@@ -176,11 +163,7 @@ const share3 = async function() {
     <div class="wrapper">
       <button @click="share3">Share</button>
       <label for="">{{ store.duration3 }} ms</label>
-      <!-- <input type="image" id="test"  src="src\assets\test3.jpeg"> -->
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+
 
     </div>
   </header>
