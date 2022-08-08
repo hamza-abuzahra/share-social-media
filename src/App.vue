@@ -8,17 +8,20 @@ import html2canvas from 'html2canvas'
 const store = useCounterStore()
 const share = async function() {
     const canvas = await html2canvas(document.getElementById('shared'), {
-    useCORS: true,
-    allowTaint: true,
-    letterRendering: true,
-    onrendered: function(canvas) {
-    var ctx = canvas.getContext('2d');
-    ctx.webkitImageSmoothingEnabled = true;
-    ctx.mozImageSmoothingEnabled = true;
-    ctx.imageSmoothingEnabled = true;
-    },
+    // useCORS: true,
+    // allowTaint: true,
+    // letterRendering: true,
+    // onrendered: function(canvas) {
+    // var ctx = canvas.getContext('2d');
+    // ctx.webkitImageSmoothingEnabled = true;
+    // ctx.mozImageSmoothingEnabled = true;
+    // ctx.imageSmoothingEnabled = true;
+    // },
     })
-  
+    
+    const test = document.getElementById("test")
+    console.log(test)
+
 
     canvas.toBlob(async (blob) => {
     const files = [new File([blob], 'image.jpeg', {type: blob.type})]
@@ -43,11 +46,12 @@ const share = async function() {
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
       <h1 @click="share">hellooo</h1>
-      <input type="file" id="test">
+      <input type="image" id="test" src="src\assets\test3.jpeg">
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
+
     </div>
   </header>
 
