@@ -33,14 +33,16 @@ const share = async function() {
 
       await navigator.share(shareData)
       console.log('shared')
+      const time = window.performance.now()
+    store.duration = time - a
+
+
     }
     catch (e) {
       console.log(e.name, e.message)
     }
     
   })
-  const time = window.performance.now()
-  store.duration = time - a
 
 }
 </script>
