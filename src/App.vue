@@ -41,12 +41,12 @@ const share = async function() {
 
 <template>
   <header>
-    <img alt="Vue logo" id="shared" class="logo" src="@\assets\test3.jpeg"/>
+    <img alt="Vue logo" id="shared" class="logo" src="@\assets\test1.jpeg"/>
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
       <h1 @click="share">hellooo</h1>
-      <input type="image" id="test" src="src\assets\test3.jpeg">
+      <!-- <input type="image" id="test" src="src\assets\test3.jpeg"> -->
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
