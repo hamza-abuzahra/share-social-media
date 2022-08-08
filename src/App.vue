@@ -121,10 +121,9 @@ const share3 = async function() {
       files
     }
     try{
-
+      const time = window.performance.now()
       await navigator.share(shareData)
       console.log('shared')
-      const time = window.performance.now()
     store.duration3 = time - a
     }
     catch (e) {
